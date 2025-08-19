@@ -124,16 +124,15 @@
                 <i class="fas fa-pencil-alt"></i>
             </a>
 
-            @php /*
+           
             <form action="{{ route('course.destroy', $course->id) }}" method="POST" class="d-inline-block">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger"
-                        onclick="return confirm('Are you sure you want to delete this record?');">
+                        onclick="return confirm('Are you sure you want to delete this course?');">
                     <i class="fas fa-trash-alt"></i>
                 </button>
             </form>
-            */ @endphp
 
 
         </td>
