@@ -51,11 +51,12 @@
               <th>Sl No</th>
 
               <th>Title</th>
+
               <th>Duration</th>
 
               <th>Image</th>
 
-               <th>Video Access</th> 
+              <th>Ending Soon Badge</th>
 
               <th>Actions</th>
 
@@ -91,23 +92,13 @@
             $now = \Carbon\Carbon::now();
         ?>
 
-        <span><strong>Duration:</strong> <?php echo e($course->duration); ?></span><br>
+        <span><strong>Duration:</strong> <?php echo e($course->duration); ?> Days</span><br>
         <!-- <small class="text-muted">Created on: <?php echo e($createdAt->format('d M Y')); ?></small><br>
         <small class="text-muted">Expires on: <?php echo e($expiresAt->format('d M Y')); ?></small><br> -->
 
-        <?php if($now->greaterThanOrEqualTo($expiresAt)): ?>
-            <span class="badge badge-danger">Expired on <?php echo e($expiresAt->format('d M Y')); ?></span>
-      <?php elseif($now->diffInDays($expiresAt) <= 3): ?>
-    <span class="badge badge-warning">
-        Expiring on 
-        <?php echo e($expiresAt->format('d M Y')); ?>
-
-    </span>
-<?php endif; ?>
-
-    <?php else: ?>
+        <?php else: ?>
         <span class="text-muted">Duration Not Set</span>
-    <?php endif; ?>
+        <?php endif; ?>
 </td>
 
 
@@ -116,20 +107,16 @@
             <img src="<?php echo e(asset('/uploads/course/' . $course->image)); ?>" width="100" alt="No Image">
         </td>
 
-        
-        <td>
-            <?php if(auth()->guard()->check()): ?>
-                <?php if($start && $now->lessThan($start)): ?>
-                    <span class="badge badge-warning">Available from <?php echo e($start->format('d M Y ')); ?></span>
-                <?php elseif($end && $now->greaterThanOrEqualTo($end)): ?>
-                    <span class="badge badge-danger">Access expired on <?php echo e($end->format('d M Y ')); ?></span>
-                <?php else: ?>
-                    <span class="badge badge-success">Active</span>
-                <?php endif; ?>
-            <?php else: ?>
-                <span class="text-danger">Login to view</span>
-            <?php endif; ?>
-        </td>
+
+         <td>
+        <?php if($course->expiring_soon == 0): ?>
+          <a href="<?php echo e(url('admin/course/expire-status/'.$course->id.'')); ?>" onclick="return confirm('Enable expiring soon badge?')" class="btn">Hidden</a>
+        <?php elseif($course->expiring_soon == 1): ?>
+          <a href="<?php echo e(url('admin/course/expire-status/'.$course->id.'')); ?>" onclick="return confirm('Disable expiring soon badge?')" class="btn btn-danger">Shown</a>
+        <?php endif; ?>
+      </td>
+
+
 
         
         <td>

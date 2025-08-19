@@ -141,7 +141,10 @@
 
       <div class="col-lg-6 d-flex coo-2">
         <div class="cou-right">
+		  @if($home_course->expiring_soon==1)
           <div class="blink-me ending-soon">Ending Soon</div>
+		  @endif
+
           <h2>{{ $home_course->title }}</h2>
           <h3>{{ $home_course->duration }} Days</h3>
           {!! $home_course->description !!}

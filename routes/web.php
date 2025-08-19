@@ -97,6 +97,8 @@ Route::get('admin', function () {
 
       Route::put('/purchases/{id}', [CoursePurchaseController::class, 'updateStatus'])->name('admin.purchases.update');
 
+      Route::get('/course/expire-status/{id}', [CourseController::class, 'ExpireStatus']);
+
 });
 });
 

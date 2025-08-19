@@ -51,11 +51,12 @@
               <th>Sl No</th>
 
               <th>Title</th>
+
               <th>Duration</th>
 
               <th>Image</th>
 
-               <th>Video Access</th> 
+              <th>Ending Soon Badge</th>
 
               <th>Actions</th>
 
@@ -91,22 +92,13 @@
             $now = \Carbon\Carbon::now();
         @endphp
 
-        <span><strong>Duration:</strong> {{ $course->duration }}</span><br>
+        <span><strong>Duration:</strong> {{ $course->duration }} Days</span><br>
         <!-- <small class="text-muted">Created on: {{ $createdAt->format('d M Y') }}</small><br>
         <small class="text-muted">Expires on: {{ $expiresAt->format('d M Y') }}</small><br> -->
 
-        @if($now->greaterThanOrEqualTo($expiresAt))
-            <span class="badge badge-danger">Expired on {{ $expiresAt->format('d M Y') }}</span>
-      @elseif($now->diffInDays($expiresAt) <= 3)
-    <span class="badge badge-warning">
-        Expiring on 
-        {{ $expiresAt->format('d M Y') }}
-    </span>
-@endif
-
-    @else
+        @else
         <span class="text-muted">Duration Not Set</span>
-    @endif
+        @endif
 </td>
 
 
@@ -115,20 +107,16 @@
             <img src="{{ asset('/uploads/course/' . $course->image) }}" width="100" alt="No Image">
         </td>
 
-        {{-- Alert column --}}
-        <td>
-            @auth
-                @if ($start && $now->lessThan($start))
-                    <span class="badge badge-warning">Available from {{ $start->format('d M Y ') }}</span>
-                @elseif ($end && $now->greaterThanOrEqualTo($end))
-                    <span class="badge badge-danger">Access expired on {{ $end->format('d M Y ') }}</span>
-                @else
-                    <span class="badge badge-success">Active</span>
-                @endif
-            @else
-                <span class="text-danger">Login to view</span>
-            @endauth
-        </td>
+
+         <td>
+        @if ($course->expiring_soon == 0)
+          <a href="{{url('admin/course/expire-status/'.$course->id.'')}}" onclick="return confirm('Enable expiring soon badge?')" class="btn btn-warning">Hidden</a>
+        @elseif ($course->expiring_soon == 1)
+          <a href="{{url('admin/course/expire-status/'.$course->id.'')}}" onclick="return confirm('Disable expiring soon badge?')" class="btn btn-danger">Shown</a>
+        @endif
+      </td>
+
+
 
         {{-- Actions column --}}
         <td>

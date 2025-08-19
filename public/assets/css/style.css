@@ -25417,18 +25417,21 @@ padding: 17.5px 22px;
 	
 	.ending-soon
 	{
-	font-size: 18px;
+	font-size: 19px;
     font-weight: 600;
 	}
 
 	@keyframes blinker {
 	  
-	  50% {
+	  20% {
 	  color:red;
 	  }
+      50%{
+      color:black;
+      }
 	  100%
 	  {
-	  color:black;
+	  color:red;
 	  }
 	  
 	}

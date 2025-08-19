@@ -65,11 +65,16 @@
 	 	 <div class="col-lg-6 d-flex coo-2">
 	 <div class="cou-right">
 	 	   
-                            <div class="ebd-soon jump">End Soon</div>
-                            <h2  >	{{$val->title}}</h2>
+
+                        @if($val->expiring_soon==1)
+          				<div class="blink-me ending-soon">Ending Soon</div>
+		  				@endif
+
+					
+                        <h2  >	{{$val->title}}</h2>
                        
 						
-						<h3>{{$val->duration}}</h3>
+						<h3>{{$val->duration}} Days Validity</h3>
 						
 					{!!$val->description!!}
 	 

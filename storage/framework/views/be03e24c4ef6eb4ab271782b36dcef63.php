@@ -138,7 +138,10 @@
 
       <div class="col-lg-6 d-flex coo-2">
         <div class="cou-right">
+		  <?php if($home_course->expiring_soon==1): ?>
           <div class="blink-me ending-soon">Ending Soon</div>
+		  <?php endif; ?>
+
           <h2><?php echo e($home_course->title); ?></h2>
           <h3><?php echo e($home_course->duration); ?> Days</h3>
           <?php echo $home_course->description; ?>

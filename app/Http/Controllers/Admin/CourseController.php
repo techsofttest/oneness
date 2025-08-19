@@ -422,5 +422,31 @@ public function deleteVideo($courseId,$videoId)
 
 
 
+    public function ExpireStatus($id)
+    {
+
+    $course = Coursesnew::findOrFail($id);
+
+    //$status = $request->status; // should be 'active', 'blocked', or 'pending'
+
+    if ($course->expiring_soon==0) {
+        $status = 1;
+    }
+    else
+    {
+        $status = 0;
+    }
+
+    $course->expiring_soon = $status;
+
+    $course->save();
+
+
+    return back()->with('success', 'Updated successfully.');
+
+}
+
+
+
 
 }
