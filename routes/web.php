@@ -152,6 +152,16 @@ Route::get('/optimize-app', function () {
 });
 
 
+Route::get('/run-migrations', function () {
+    try {
+        Artisan::call('migrate', ['--force' => true]);
+        return "✅ Migrations run successfully.";
+    } catch (\Exception $e) {
+        return "❌ Migration failed: " . $e->getMessage();
+    }
+});
+
+
 
 
 require __DIR__.'/auth.php';
