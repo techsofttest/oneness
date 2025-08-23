@@ -158,14 +158,13 @@ class ContactUsController extends Controller
             // $mail->Host = (strpos($hostname, 'cpnl') === FALSE) ? 'relay-hosting.secureserver.net' : 'localhost';
             $mail->Host = env('MAIL_HOST');
             $mail->Port = env('MAIL_PORT'); // or 465 for SSL
-            $mail->SMTPSecure = env('MAIL_SECURE'); // or 'ssl' if using Port 465
+            $mail->SMTPSecure = env('MAIL_ENCRYPTION'); // or 'ssl' if using Port 465
 
             $mail->SMTPAuth = true;
             $mail->Username = env('MAIL_USERNAME');
             $mail->Password = env('MAIL_PASSWORD');
-            $mail->From     = env('MAIL_FROM_ADDRESS');
-            $mail->FromName = env('MAIL_FROM_NAME');
-            $mail->addAddress(env('MAIL_USERNAME'));
+            $mail->setFrom(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
+            $mail->addAddress(env('MAIL_TO_ADDRESS'));
             $mail->SMTPDebug  = env('APP_DEBUG') ? 2 : 0; 
             $mail->IsHTML(true);
 
