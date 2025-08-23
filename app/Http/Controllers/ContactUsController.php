@@ -162,7 +162,7 @@ class ContactUsController extends Controller
 
             $mail->SMTPAuth = true;
             $mail->Username = 'techsofttest@gmail.com';
-            $mail->Password = 'celzboqebpcusnce ';
+            $mail->Password = 'celzboqebpcusnce';
             $mail->From = 'techsofttest@gmail.com';
             $mail->FromName = 'Aluer Aesthetic & Dental Clinic';
             $mail->AddAddress('techsofttest@gmail.com');
