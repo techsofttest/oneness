@@ -166,6 +166,7 @@ class ContactUsController extends Controller
             $mail->From     = env('MAIL_FROM_ADDRESS');
             $mail->FromName = env('MAIL_FROM_NAME');
             $mail->addAddress(env('MAIL_USERNAME'));
+            $mail->SMTPDebug  = env('APP_DEBUG') ? 2 : 0; 
             $mail->IsHTML(true);
 
             $mail->Body = $body;
