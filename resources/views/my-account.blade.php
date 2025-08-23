@@ -77,7 +77,7 @@
                   </tr>
 
 
-                  @if(!empty($courses))
+                  @if(!$courses->isEmpty())
 
                   @foreach($courses as $course)
 
@@ -101,7 +101,7 @@
 
                   <tr>
 
-                  <td colspan="3">No Courses Purchased</td>
+                  <td colspan="5">No Courses Purchased</td>
 
                   </tr>
 

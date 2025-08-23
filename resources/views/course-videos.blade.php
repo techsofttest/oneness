@@ -84,9 +84,11 @@
 
         @php $i=1; @endphp
 
-        @if(!empty($courses))
+        @if(!$courses->isEmpty())
 
         @foreach($courses as $course)
+
+        
 
          <tr class="cart_item">
 

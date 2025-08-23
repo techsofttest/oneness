@@ -84,9 +84,12 @@
 
         <?php $i=1; ?>
 
-        <?php if(!empty($courses)): ?>
+        <?php if(!$courses->isEmpty()): ?>
+
 
         <?php $__currentLoopData = $courses; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $course): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+        
 
          <tr class="cart_item">
 

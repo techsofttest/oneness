@@ -4,10 +4,20 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <title>Oneness Homoeo & Acupuncture Clinic</title>
-        <meta name="author" content= />
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
+        <title>Healer Sabu Joseph</title>
+
+        <meta name="description" content="I'm an ordinary man with extra ordinary dreams creating supper humans out of ordinary people with limitless possibilities.">
+
+         <!-- Open Graph Meta Tags -->
+        <meta property="og:title" content="Healer Sabu Joseph" />
+        <meta property="og:description" content="I'm an ordinary man with extra ordinary dreams creating supper humans out of ordinary people with limitless possibilities." />
+        <meta property="og:image" content="<?php echo e(asset('assets/img/sabu-joseph.jpg')); ?>" />
+        <meta property="og:url" content="<?php echo e(url('/')); ?>" />
+        <meta property="og:type" content="website" />
+
+        <!-- Recommended extra -->
+        <meta property="og:site_name" content="Healer Sabu Joseph" />
+        <meta property="og:locale" content="en_US" />
        
         <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
        
