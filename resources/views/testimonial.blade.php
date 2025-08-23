@@ -148,14 +148,14 @@
         </div>
 	   </div>
 	   	 <!----------- Start  --------->
-<!-- <div id="G3" class="mtabcontent  "    >
+<div id="G3" class="mtabcontent  "    >
   
 			 	<div class="tagembed-widget" style="width:100%;height:100%;overflow:auto;" data-widget-id="293017" website="1"></div><script src="https://widget.tagembed.com/embed.min.js" type="text/javascript"></script>
 		 
 		 
 			<br>
 			<br> 
-	   </div> -->
+	   </div> 
 	   	 <!----------- Start  --------->
 <div id="G4" class="mtabcontent  "    >
 	  
@@ -198,6 +198,28 @@
   </div>
  </div>
 
+
+ <script>
+	function openprofile(evt, profileName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("mtabcontent");
+ 
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("mtablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+	
+  }
+  document.getElementById(profileName).style.display = "block";
+  evt.currentTarget.className += " active";
+   AOS.refresh();
+ 
+}
+document.getElementById("defaultOpen").click();
+
+	</script>
 
 
        @endsection

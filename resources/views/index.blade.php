@@ -365,7 +365,7 @@
 	 
 	 </div>
 	 
-	  <!-- <div class="Reviewsec">
+	  <div class="Reviewsec">
 	  <div class="container">
 	  
 	  <div class="title-area mb-0 text-center">
@@ -378,7 +378,7 @@
 		 	
  </div>
 	 </div>
-	  -->
+	  
 
 
 	     <div class="Vidoetestimonial-sec" id="oneness-clinic">
