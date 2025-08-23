@@ -168,6 +168,7 @@ class ContactUsController extends Controller
             $mail->SMTPDebug  = env('APP_DEBUG') ? 2 : 0; 
             $mail->IsHTML(true);
 
+            $mail->Subject = $subject;
             $mail->Body = $body;
 
             ob_start(); // Start capturing output
