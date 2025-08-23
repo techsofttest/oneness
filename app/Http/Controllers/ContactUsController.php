@@ -77,7 +77,7 @@ class ContactUsController extends Controller
                                                     <tbody>
                                                         <tr>
                                                             <td width="100%" align="left" valign="top" colspan="2" style="text-align:center; padding: 2%; border-bottom:1px solid #c4891f;">
-                                                                <h4 style="text-transform: uppercase;font-size: 26px;color: #58595b;font-weight: 800;">Aluer Aesthetic & Dental Clinic</h4>
+                                                                <h4 style="text-transform: uppercase;font-size: 26px;color: #58595b;font-weight: 800;">Healer Sabu Joseph</h4>
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -131,7 +131,7 @@ class ContactUsController extends Controller
                                                             <td style="border-top:1px solid #c4891f; padding:10px; text-align:center;">&nbsp;</td>
                                                         </tr>
                                                         <tr>
-                                                            <td align="center" valign="top" style="font-family:Tahoma;font-size:12px;font-weight:normal;color:#333333;text-decoration:none"><strong>Aluer Aesthetic & Dental Clinic</strong></td>
+                                                            <td align="center" valign="top" style="font-family:Tahoma;font-size:12px;font-weight:normal;color:#333333;text-decoration:none"><strong>Healer Sabu Joseph</strong></td>
                                                         </tr>
                                                         <tr>
                                                             <td align="left" valign="top">&nbsp;</td>
