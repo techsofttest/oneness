@@ -163,7 +163,8 @@ class ContactUsController extends Controller
             $mail->SMTPAuth = true;
             $mail->Username = env('MAIL_USERNAME');
             $mail->Password = env('MAIL_PASSWORD');
-            $mail->setFrom(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
+            $mail->setFrom(env('MAIL_FROM_ADDRESS'));
+            $mail->FromName = env('MAIL_FROM_NAME');
             $mail->addAddress(env('MAIL_TO_ADDRESS'));
             $mail->SMTPDebug  = env('APP_DEBUG') ? 2 : 0; 
             $mail->IsHTML(true);
