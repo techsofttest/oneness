@@ -94,7 +94,7 @@ class LoginController extends Controller
                         $user->device_fingerprint = $fingerprint;
                         $user->save();
                     }
-                    return redirect()->intended(url()->previous());
+                    return redirect()->intended(url()->previous())->with('success', 'Login Success!');
                     default:
                     Auth::logout();
                     return back()->withErrors(['error' => 'Unauthorized role.']);
