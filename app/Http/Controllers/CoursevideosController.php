@@ -11,6 +11,8 @@ use App\Models\Page;
 
 use Carbon\Carbon;
 
+use Vimeo\Vimeo;
+
 use Illuminate\Support\Facades\DB;
 
 
@@ -19,7 +21,15 @@ class CoursevideosController extends Controller
    public function index()
 {
 
-     $today = Carbon::today()->toDateString();
+
+    $client = new Vimeo(
+            config('services.vimeo.client'),
+            config('services.vimeo.secret'),
+            config('services.vimeo.token')
+        );
+
+
+    $today = Carbon::today()->toDateString();
 
     // Fetch the user from the CourseBooking table
 
@@ -50,6 +60,12 @@ class CoursevideosController extends Controller
     // Attach videos to each course
     foreach ($data['courses'] as $course) {
         $course->videos = $videos[$course->id] ?? [];
+    }
+
+    foreach ($course->videos as $video) {
+        // assuming $video->url contains the Vimeo video ID
+        $response = $client->request("/videos/{$video->video}", [], 'GET');
+        $video->iframe = $response['body']['embed']['html'] ?? null;
     }
 
     // Decode only if $data['course'] exists and has a video

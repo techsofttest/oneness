@@ -42,4 +42,12 @@ return [
     'redirect' => env('GOOGLE_REDIRECT_URI'),
 ],
 
+
+    'vimeo' => [
+    'client' => env('VIMEO_CLIENT'),
+    'secret' => env('VIMEO_SECRET'),
+    'token'  => env('VIMEO_ACCESS_TOKEN'),
+    ],
+
+
 ];

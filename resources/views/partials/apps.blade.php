@@ -4,10 +4,20 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <title>Oneness Homoeo & Acupuncture Clinic</title>
-        <meta name="author" content= />
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
+        <title>Healer Sabu Joseph</title>
+
+        <meta name="description" content="I'm an ordinary man with extra ordinary dreams creating supper humans out of ordinary people with limitless possibilities.">
+
+         <!-- Open Graph Meta Tags -->
+        <meta property="og:title" content="Healer Sabu Joseph" />
+        <meta property="og:description" content="I'm an ordinary man with extra ordinary dreams creating supper humans out of ordinary people with limitless possibilities." />
+        <meta property="og:image" content="{{asset('assets/img/sabu-joseph.jpg')}}" />
+        <meta property="og:url" content="{{ url('/') }}" />
+        <meta property="og:type" content="website" />
+
+        <!-- Recommended extra -->
+        <meta property="og:site_name" content="Healer Sabu Joseph" />
+        <meta property="og:locale" content="en_US" />
        
         <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
        
@@ -21,7 +31,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="{{asset('assets/css/app.min.css')}}" />
         <link rel="stylesheet" href="{{asset('assets/css/fontawesome.min.css')}}" />
-        <link rel="stylesheet" href="{{asset('assets/css/style.css')}}?v1.1" />
+        <link rel="stylesheet" href="{{asset('assets/css/style.css')}}?v1.2" />
 		    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}?v1" />
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 

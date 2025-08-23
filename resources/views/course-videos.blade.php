@@ -106,10 +106,9 @@
 			  <td>
 			
 			<div class="download-video">
-      <video width="100%" controls oncontextmenu="return false;" controlsList="nodownload">
-      <source src="{{ route('course.video.stream', [$course->id, $video->video]) }}" type="video/mp4">
-      <source src="mov_bbb.ogg" type="video/ogg">
-      </video>
+      
+       {!! $video->iframe !!}
+      
       @php /*
       <div class="d-video-hover">
       <a href="{{ route('course.video.stream', [$course->id, $video['url']]) }}" class="play-btn style3 popup-video" tabindex="-1"><i class="fas fa-play"></i></a></div>

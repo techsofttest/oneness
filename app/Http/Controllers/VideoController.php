@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class VideoController extends Controller
 {
+    /* For straming from local
     public function stream($courseId, $videoFile, Request $request)
     {
         // 1. Verify that the logged-in user purchased the course
@@ -85,4 +86,42 @@ class VideoController extends Controller
     }, $statusCode, $headers);
 
     }
+    */
+
+
+
+     public function stream($courseId, $vimeo_id, Request $request)
+    {
+        // 1. Verify that the logged-in user purchased the course
+        $course = DB::table('course_bookings')
+        ->join('coursesnews', 'course_bookings.course_id', '=', 'coursesnews.id')
+        ->where('course_bookings.user_id', auth()->id())
+        ->where('course_id', $courseId)
+        ->where('status','active')
+        ->select('coursesnews.*', 'course_bookings.status', 'course_bookings.created_at as purchased_at')
+        ->first();
+
+
+        if (!$course) {
+            abort(403, 'Not authorized to view this video.');
+        }
+
+        $client = new Vimeo(
+            config('services.vimeo.client'),
+            config('services.vimeo.secret'),
+            config('services.vimeo.token')
+        );
+
+        // Fetch private video by ID
+        $response = $client->request("/videos/", [], 'GET');
+
+
+
+
+    }
+
+
+
+
+
 }

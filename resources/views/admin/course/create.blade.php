@@ -268,8 +268,8 @@
                             </div>
                             
                             <div class="field-group">
-                                <label>Video:</label>
-                                <input accept="video/*" class="form-control" type="file" name="video[]" placeholder="Insert video">
+                                <label>Vimeo ID:</label>
+                                <input class="form-control" type="text" name="video[]" placeholder="Enter Vimeo ID Here">
                             </div>
                             
                         </div>
@@ -319,7 +319,8 @@
                 </div>  
 
 
-                
+     
+@php /*
 <div class="form-group row">
     <label for="access_start" class="col-sm-2 col-form-label">Access Start</label>
     <div class="col-sm-10">
@@ -333,6 +334,8 @@
         <input type="date" name="access_end" class="form-control" id="access_end">
     </div>
 </div>
+
+*/ @endphp
 
                 
     <div class="form-group row">
@@ -1420,8 +1423,8 @@ options: [
                             </div>
                             
                             <div class="field-group">
-                                <label>Video:</label>
-                                <input accept="video/*" class="form-control" type="file" name="video[]" placeholder="Insert video">
+                                <label>Vimeo ID:</label>
+                                <input  class="form-control" type="text" name="video[]" placeholder="Enter Vimeo ID Here">
                             </div>
                         </div>
                         

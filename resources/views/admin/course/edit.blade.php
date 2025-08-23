@@ -305,8 +305,8 @@
                             </div>
                             
                             <div class="field-group">
-                                <label>Video:</label>
-                                <input accept="video/*" class="form-control" type="file" name="video[]" placeholder="Insert video">
+                                <label>Vimeo ID:</label>
+                                <input class="form-control" type="text" name="video[]" placeholder="Enter Vimeo ID">
                             </div>
                             
                         </div>
@@ -378,7 +378,7 @@
                
   
 
-                
+                @php /*
               <div class="form-group row">
     <label for="" class="col-sm-2 col-form-label">Access Start</label>
     <div class="col-sm-10">
@@ -394,6 +394,7 @@
                value="{{ $course->access_end ? \Carbon\Carbon::parse($course->access_end)->format('Y-m-d'): ''  }}">
     </div>
 </div>
+            */ @endphp
 
 
 
@@ -1153,8 +1154,8 @@ options: [
                             </div>
                             
                             <div class="field-group">
-                                <label>Video:</label>
-                                <input accept="video/*" class="form-control" type="file" name="video[]" placeholder="Insert video">
+                                <label>Vimeo ID:</label>
+                                <input class="form-control" type="text" name="video[]" placeholder="Enter Vimeo ID">
                             </div>
                         </div>
                         

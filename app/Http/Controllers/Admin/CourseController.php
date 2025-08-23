@@ -113,9 +113,10 @@ class CourseController extends Controller
             $videosData = [];
 
             $titles = $request->input('c_title', []);
-            $files = $request->file('video', []);
+            $vimeo_id = $request->input('video', []);
 
         // Check if a file was uploaded for this index
+        /*
         if (isset($files[$index]) && $files[$index]->isValid()) {
             $file = $files[$index];
 
@@ -127,24 +128,20 @@ class CourseController extends Controller
             //$videoPath = $destPath . '/' . $filename;
             $videoPath = $file->storeAs('videos', $filename); 
         }
+        */
 
-        // Only add if title or video path is present
-        if (!empty($title) || !empty($videoPath)) {
-            /*$videosData[] = [
-                'title' => $title,
-                'url'   => $videoPath,
-            ];*/
+            foreach ($titles as $index => $title) {
 
             DB::table('coursesnews_videos')->insert([
                 'c_parent_id' => $id,
                 'c_title'     => $title,
-                'video'       => $videoPath,
+                'video'       => $vimeo_id[$index],
                 'created_at'  => now(),
                 'updated_at'  => now()
             ]);
 
-        }
-
+            }
+       
 
         }
 
@@ -223,25 +220,27 @@ class CourseController extends Controller
     $videosData = [];
 
     $titles = $request->input('c_title', []);
-    $files = $request->file('video', []);
+    $vimeo_id = $request->input('video', []);
 
     foreach ($titles as $index => $title) {
         $videoPath = null;
 
         // Check if file uploaded and valid
+        /*
         if (isset($files[$index]) && $files[$index]->isValid()) {
             $file = $files[$index];
             $destPath = 'videos';
             $filename = time() . '_' . preg_replace('/[^a-zA-Z0-9_\-\.]/', '', $file->getClientOriginalName());
             $videoPath = $file->storeAs('videos', $filename);
         }
+        */
 
          // Insert only if title or video exists
-            if (!empty($title) || !empty($videoPath)) {
+            if (!empty($title)) {
                 DB::table('coursesnews_videos')->insert([
                     'c_parent_id' => $id,
                     'c_title' => $title,
-                    'video' => $videoPath,
+                    'video' => $vimeo_id[$index],
                     'created_at' => now(),
                     'updated_at' => now()
                 ]);
