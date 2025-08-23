@@ -156,17 +156,16 @@ class ContactUsController extends Controller
             $mail = new PHPMailer;
             $mail->IsSMTP();
             // $mail->Host = (strpos($hostname, 'cpnl') === FALSE) ? 'relay-hosting.secureserver.net' : 'localhost';
-            $mail->Host = 'smtp.gmail.com';
-            $mail->Port = 587; // or 465 for SSL
-            $mail->SMTPSecure = 'tls'; // or 'ssl' if using Port 465
+            $mail->Host = env('MAIL_HOST');
+            $mail->Port = env('MAIL_PORT'); // or 465 for SSL
+            $mail->SMTPSecure = env('MAIL_SECURE'); // or 'ssl' if using Port 465
 
             $mail->SMTPAuth = true;
-            $mail->Username = 'techsofttest@gmail.com';
-            $mail->Password = 'celzboqebpcusnce';
-            $mail->From = 'techsofttest@gmail.com';
-            $mail->FromName = 'Aluer Aesthetic & Dental Clinic';
-            $mail->AddAddress('techsofttest@gmail.com');
-            $mail->Subject = $subject;
+            $mail->Username = env('MAIL_USERNAME');
+            $mail->Password = env('MAIL_PASSWORD');
+            $mail->From     = env('MAIL_FROM_ADDRESS');
+            $mail->FromName = env('MAIL_FROM_NAME');
+            $mail->addAddress(env('MAIL_USERNAME'));
             $mail->IsHTML(true);
 
             $mail->Body = $body;
