@@ -55,9 +55,9 @@ class ContactUsController extends Controller
             
 
 
-            $title = "Aluer Aesthetic & Dental Clinic";
-            $heading = 'Contacts';
-            $subject = "Contacts || Aluer Aesthetic & Dental Clinic";
+            $title = "Healer Sabu Joseph";
+            $heading = 'Contact Us';
+            $subject = "Contact Us || Healer Sabu Joseph";
 
             
 
