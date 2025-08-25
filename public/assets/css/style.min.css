@@ -1738,6 +1738,9 @@ border-style: solid;
     }
 }
 
+.sticky-wrapper.sticky .main-menu a {
+	 color: var(--theme-color);
+}
 
 .sticky-wrapper.sticky {
     position: fixed;
@@ -1762,6 +1765,11 @@ border-style: solid;
 .sticky-wrapper.sticky .header-logo h3{
 	  color: var(--theme-color);
 }
+
+.sticky-wrapper.sticky a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+	}
 
 
 .main-menu a {
