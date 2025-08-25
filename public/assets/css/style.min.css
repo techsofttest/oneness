@@ -1450,6 +1450,37 @@ border-style: solid;
         transform: translateX(0) translateY(0);
     }
 }
+
+
+.scalein.th-animated {
+    --animation-name: scalein;
+}
+.slidetopleft.th-animated {
+    --animation-name: slidetopleft;
+}
+.slidebottomright.th-animated {
+    --animation-name: slidebottomright;
+}
+.slideinleft.th-animated {
+    --animation-name: slideinleft;
+}
+.slideinright.th-animated {
+    --animation-name: slideinright;
+}
+.slideinup.th-animated {
+    --animation-name: slideinup;
+}
+.slideindown.th-animated {
+    --animation-name: slideindown;
+}
+.rollinleft.th-animated {
+    --animation-name: rollinleft;
+}
+.rollinright.th-animated {
+    --animation-name: rollinright;
+}
+
+
 .widget_nav_menu ul {
     list-style: none;
     padding: 0;
