@@ -1737,6 +1737,33 @@ border-style: solid;
         opacity: 1;
     }
 }
+
+
+.sticky-wrapper.sticky {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--white-color);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.07);
+    -webkit-animation: stickyAni 0.4s ease-in-out;
+    animation: stickyAni 0.4s ease-in-out;
+}
+
+.header-black  .main-menu a:hover, .sticky-wrapper.sticky .main-menu a:hover {
+	  color: #934ced;
+}
+
+.sticky-wrapper.sticky .header-logo img {
+   height: 88px;
+    
+}
+
+.sticky-wrapper.sticky .header-logo h3{
+	  color: var(--theme-color);
+}
+
+
 .main-menu a {
     display: block;
     position: relative;
