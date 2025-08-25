@@ -1480,6 +1480,9 @@ border-style: solid;
     --animation-name: rollinright;
 }
 
+.th-animated {
+    opacity: 1;
+}
 
 .widget_nav_menu ul {
     list-style: none;
