@@ -31,7 +31,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="{{asset('assets/css/app.min.css')}}" />
         <link rel="stylesheet" href="{{asset('assets/css/fontawesome.min.css')}}" />
-        <link rel="stylesheet" href="{{asset('assets/css/style.css')}}?v1.2" />
+        <link rel="stylesheet" href="{{asset('assets/css/style.min.css')}}?v1.2" />
 		    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}?v1" />
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
