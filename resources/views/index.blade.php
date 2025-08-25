@@ -66,9 +66,9 @@
 				   <div class="container">
                         <div class="hero-style1">
                            
-                            <h1 class="hero-title" data-ani="slideinleft" data-ani-delay="0.3s"> {{$val->title}} </h1>
+                            <h1 class="hero-title" > {{$val->title}} </h1>
 					@if(trim($val->content) !== '')
-    <p class="hero-text" data-ani="slideinleft" data-ani-delay="0.7s">{!! $val->content !!}</p>
+    <p class="hero-text" >{!! $val->content !!}</p>
 @endif
 
                         </div>
