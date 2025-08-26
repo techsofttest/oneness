@@ -62,9 +62,9 @@
 				   <div class="container">
                         <div class="hero-style1">
                            
-                            <h1 class="hero-title" data-ani="slideinleft" data-ani-delay="0.3s"> <?php echo e($val->title); ?> </h1>
+                            <h1 class="hero-title" > <?php echo e($val->title); ?> </h1>
 					<?php if(trim($val->content) !== ''): ?>
-    <p class="hero-text" data-ani="slideinleft" data-ani-delay="0.7s"><?php echo $val->content; ?></p>
+    <p class="hero-text" ><?php echo $val->content; ?></p>
 <?php endif; ?>
 
                         </div>
@@ -119,7 +119,7 @@
 	 
 	 </div>
 	 
-	<?php if(!empty($home_course)): ?>
+	<?php if(!empty($courses_all)): ?>
 <div class="Coursemsec">
   <div class="container ">
     <div class="title-area mb-50 text-center">
@@ -127,6 +127,8 @@
       <p>Empower Your Future. Your Journey to Excellence Begins Here.</p>
     </div>
   </div>
+
+  <?php $__currentLoopData = $courses_all; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $home_course): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
   <div class="container-fluid ">
     <div class="row">
@@ -165,6 +167,10 @@
       </div>
     </div>
   </div>
+
+  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+
 </div>
 <?php endif; ?>
 
@@ -374,7 +380,7 @@
 	 
 	 </div>
 	 
-	  <!-- <div class="Reviewsec">
+	  <div class="Reviewsec">
 	  <div class="container">
 	  
 	  <div class="title-area mb-0 text-center">
@@ -387,7 +393,7 @@
 		 	
  </div>
 	 </div>
-	  -->
+	  
 
 
 	     <div class="Vidoetestimonial-sec" id="oneness-clinic">

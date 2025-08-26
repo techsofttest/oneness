@@ -24,7 +24,7 @@ class HomeController extends Controller
 
        $data['home_clinicvideo'] =   Clinicvideo::get();
 
-    $data['home_course'] = Coursesnew::latest()->first();
+    $data['courses_all'] = Coursesnew::latest()->get();
 
        $data['home_video'] =   Videotestimonial::get();
 

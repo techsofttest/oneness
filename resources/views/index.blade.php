@@ -122,7 +122,7 @@
 	 
 	 </div>
 	 
-	@if(!empty($home_course))
+	@if(!empty($courses_all))
 <div class="Coursemsec">
   <div class="container ">
     <div class="title-area mb-50 text-center">
@@ -130,6 +130,8 @@
       <p>Empower Your Future. Your Journey to Excellence Begins Here.</p>
     </div>
   </div>
+
+  @foreach($courses_all as $home_course)
 
   <div class="container-fluid ">
     <div class="row">
@@ -167,6 +169,10 @@
       </div>
     </div>
   </div>
+
+  @endforeach
+
+
 </div>
 @endif
 
