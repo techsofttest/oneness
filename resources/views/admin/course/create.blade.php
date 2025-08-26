@@ -251,7 +251,7 @@
 
                 <div class="form-group row">
                  <div class="col-xs-12 col-sm-2 form-group">
-                  <strong>Add Videos</strong>
+                  <strong>Add Videos (Add Vimeo ID only)</strong>
                 </div>
 
                 <div class="col-xs-12 col-sm-10 form-group">
