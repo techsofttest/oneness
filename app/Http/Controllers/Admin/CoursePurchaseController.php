@@ -38,7 +38,7 @@ class CoursePurchaseController extends Controller
 
             $activation_date = $today;
 
-            $expiration_date = $expiry->addDays($course_expiry);
+            $expiration_date = $expiry->addDays($course_expiry-1);
 
             $purchase->activation_date = $activation_date;
 
