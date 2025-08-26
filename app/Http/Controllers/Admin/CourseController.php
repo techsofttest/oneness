@@ -329,14 +329,15 @@ foreach ($newTitles as $index => $title) {
                     }
                 }
             }
+
+
+
+
         }
-       
-
-       
-       
         
-        Coursesnew::where('id',$id)->delete();
+        DB::table('coursesnews_videos')->where('c_parent_id', $id)->delete();
 
+        Coursesnew::where('id',$id)->delete();
 
         return redirect()->back()->with('success',' Deleted Successfully ');
 
