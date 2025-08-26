@@ -87,9 +87,9 @@
 
                   <td>{{$course->title}}</td>
 
-                  <td>{{date('d-M-Y',strtotime($course->access_start))}}</td>
-
-                  <td>{{date('d-M-Y',strtotime($course->access_end))}}</td>
+                  <td>{{ $course->access_start ? date('d-M-Y', strtotime($course->activation_date)) : '-' }}</td>
+                  
+                  <td>{{ $course->access_end ? date('d-M-Y', strtotime($course->ending_date)) : '-' }}</td>
 
                   <td>{{ $course->status == 'blocked' ? 'Pending' : 'Active' }}</td>
 
