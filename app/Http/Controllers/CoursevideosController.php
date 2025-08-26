@@ -47,7 +47,7 @@ class CoursevideosController extends Controller
     ->where('status','active')
     ->whereDate('course_bookings.activation_date', '<=', $today)
     ->whereDate('course_bookings.ending_date', '>=', $today)
-    ->select('coursesnews.*', 'course_bookings.status', 'course_bookings.created_at as purchased_at')
+    ->select('coursesnews.*','course_bookings.activation_date','course_bookings.ending_date','course_bookings.status','course_bookings.created_at as purchased_at')
     ->get();
 
     // Fetch videos separately
