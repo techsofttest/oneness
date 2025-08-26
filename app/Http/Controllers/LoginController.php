@@ -116,6 +116,7 @@ class LoginController extends Controller
             'name'     => 'required|string|max:255',
             'email'    => 'required|email|unique:users,email',
             'password' => 'required|min:6',
+            'device_fingerprint' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -137,6 +138,7 @@ class LoginController extends Controller
         $user = User::create([
             'name'     => $validated['name'],
             'email'    => $validated['email'],
+            'device_fingerprint' => $validated['device_fingerprint'],
             'password' => Hash::make($validated['password']),
             'role'     => 'user',
         ]);
