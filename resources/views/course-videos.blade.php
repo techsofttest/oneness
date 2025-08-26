@@ -34,7 +34,7 @@
 
 <style>
 
-  .vp-center
+  body.vp-center
   {
 
     height:unset !important;
