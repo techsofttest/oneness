@@ -95,7 +95,7 @@
          <td></td>
 			   <td ><b>{{ $course->title }}</b></td>
 
-         <td >{{ date('d-M-Y',strtotime($course->access_start)) }} to {{ date('d-M-Y',strtotime($course->access_end)) }}</td>
+         <td >{{ date('d-M-Y',strtotime($course->activation_date)) }} to {{ date('d-M-Y',strtotime($course->ending_date)) }}</td>
          
         </tr>
 
