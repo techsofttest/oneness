@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 
 use Illuminate\Auth\Middleware\RedirectIfAuthenticated;
 
+use Illuminate\Support\Facades\Db;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -30,6 +32,11 @@ class AppServiceProvider extends ServiceProvider
         }
         return route('my.account');
         });
+
+         if (!$this->app->runningInConsole()) {
+        $contact = DB::table("contacts")->first();
+        \View::share('contact', $contact);
+    }
 
     }
 }

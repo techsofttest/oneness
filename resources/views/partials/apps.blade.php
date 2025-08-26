@@ -74,8 +74,8 @@
                             <div class="header-links">
                                 <ul>
                                     <li><i class="fal fa-location-dot"></i>Mookkannoor, Kerala </li>    
-                                    <li><i class="fal fa-phone"></i><a href="tel:+91 9747532827">+91 9747532827</a></li>
-									<li><i class="fab fa-whatsapp"></i><a ref="https://api.whatsapp.com/send/?phone=+91 9747532827&text=%2AHey  Oneness Homoeo & Acupuncture Clinic+&app_absent=0" target="_blank">+91 9747532827</a></li>
+                                    <li><i class="fal fa-phone"></i><a href="tel:{{$contact->phone}}">{{$contact->phone}}</a></li>
+									<li><i class="fab fa-whatsapp"></i><a href="https://api.whatsapp.com/send/?phone={{$contact->whatsapp}}&text=%2AHey  Oneness Homoeo & Acupuncture Clinic+&app_absent=0" target="_blank">{{$contact->whatsapp}}</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -153,13 +153,13 @@
                 <ul>
                  
 
-                @if(auth()->check())
+                @if(auth()->check() && auth()->user()->role=="user")
 				  <li class="menu-item-has-children login-img"><a href="javascript:void()" class="phh-bb"><img src="{{asset('assets/img/user.jpg')}}" alt=""></a>
                     <ul class="sub-menu">
 					
 					<li class="drop-pdetail">
                        
-					<h3>{{ auth()->user()->name ?? '' }}</h3>
+					<h3>{{ auth()->user()->name ?? ''}}</h3>
                               
 					</li>
 					<li><a href="{{url('my-account')}}">My Account</a></li>
@@ -274,11 +274,11 @@
                                    <div class="th-widget-contact">
                                     <div class="info-box">
                                       <h3 CLASS="DDRRR">Call Us</h3>
-                                        <p class="info-box_text"><a href="tel:+91 9747532827">+91 9747532827</a></p>
+                                        <p class="info-box_text"><a href="tel:{{$contact->phone}}">{{$contact->phone}}</a></p>
                                     </div>
                                                                        <div class="info-box">
                                       <h3 CLASS="DDRRR">Email Us</h3>
-                                        <p class="info-box_text"><a href="mailto:info@oneness.com">info@oneness.com</a></p>
+                                        <p class="info-box_text"><a href="mailto:{{$contact->email}}">{{$contact->email}}</a></p>
                                     </div>
                                    
                                 </div>
@@ -312,7 +312,6 @@
  
 
 <li><a href="{{url('/contact')}}">Contact us</a></li>
-<li><a href="#" data-bs-toggle="modal" data-bs-target="#SigninModal">Login</a></li>
 
  
                                     </ul>
@@ -322,11 +321,11 @@
 
                         <div class="col-md-6 col-sm-6   col-lg-2">
                             <div class="widget footer-widget">
-                                <h3 class="widget_title">Locate   Us</h3>
+                                <h3 class="widget_title">Locate Us</h3>
                                 <div class="th-widget-contact">
                                     <div class="info-box">
                                       
-                                        <p class="info-box_text">Oneness Homoeo & Acupuncture Clinic<br>pallippadi stop, Mookkannoor, Kerala 683577</p>
+                                        <p class="info-box_text">{{$contact->address}}</p>
                                     </div>
                                    
                                    
@@ -443,17 +442,22 @@
  	<div class="fixedRit">
 
   <ul>
-  <li> <a  class="whatsapp" href="https://api.whatsapp.com/send/?phone=+91 9747532827&text=%2AHey Oneness Homoeo & Acupuncture Clinic+&app_absent=0" target="_blank">
+      
+      <li> <a  class="whatsapp" href="https://api.whatsapp.com/send/?phone={{$contact->whatsapp}}&text=%2AHey Oneness Homoeo & Acupuncture Clinic+&app_absent=0" target="_blank">
 
       <div class="align"> <i  class="fab fa-whatsapp" aria-hidden="true"></i>  </div>
 
       </a> </li>
-	  <li> <a class="mail" href="mailto:info@oneness.com">
+
+
+	  <li> <a class="mail" href="mailto:{{$contact->email}}">
 
       <div class="align"> <i class="fas fa-envelope" aria-hidden="true"></i>  </div>
 
       </a> </li>
-    <li> <a class="call" href="tel:+91 9747532827">
+
+
+      <li> <a class="call" href="tel:{{$contact->phone}}">
 
       <div class="align"> <i class="fa fa-phone" aria-hidden="true"></i>  </div>
 
@@ -470,9 +474,9 @@
 </div>
 
  <ul class="sti-menu ">
- <li><a  href="tel:+91 974753282">  <i><img src="{{asset('assets/img/fi-1.png')}}" alt=""></i><span>Call</span></a></li>
- <li><a href="mailto:info@oneness.com"  ><i><img src="{{asset('assets/img/fi-2.png')}}" alt=""></i><span>Mail </span></a></li>   
- <li><a href="https://api.whatsapp.com/send/?phone=+91 9747532827&text=%2AHey Oneness Homoeo & Acupuncture Clinic+&app_absent=0" target="_blank"  > <i><img src="{{asset('assets/img/fi-3.png')}}" alt=""></i><span>Whats App</span></a></li>
+ <li><a  href="tel:{{$contact->phone}}">  <i><img src="{{asset('assets/img/fi-1.png')}}" alt=""></i><span>Call</span></a></li>
+ <li><a href="mailto:{{$contact->email}}"  ><i><img src="{{asset('assets/img/fi-2.png')}}" alt=""></i><span>Mail </span></a></li>   
+ <li><a href="https://api.whatsapp.com/send/?phone={{$contact->whatsapp}}&text=%2AHey Oneness Homoeo & Acupuncture Clinic+&app_absent=0" target="_blank"  > <i><img src="{{asset('assets/img/fi-3.png')}}" alt=""></i><span>Whats App</span></a></li>
  <li><a href="{{url('/contact')}}"  >  <i><img src="{{asset('assets/img/fi-4.png')}}" alt=""></i><span>Contact</span></a></li>            
   </ul>
 		 
