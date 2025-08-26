@@ -34,11 +34,9 @@
 
 <style>
 
-  body.vp-center
+  .download-video iframe
   {
-
-    height:unset !important;
-
+    height:100%;
   }
 
 </style>
