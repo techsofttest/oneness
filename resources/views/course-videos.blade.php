@@ -32,7 +32,16 @@
 
 @section('content')
 
+<style>
 
+  .vp-center
+  {
+
+    height:unset !important;
+
+  }
+
+</style>
 
 
   <div class="inner-bannr-sec">
