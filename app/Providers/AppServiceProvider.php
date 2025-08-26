@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 
 use Illuminate\Auth\Middleware\RedirectIfAuthenticated;
 
-use Illuminate\Support\Facades\Db;
+use Illuminate\Support\Facades\DB;
 
 class AppServiceProvider extends ServiceProvider
 {
