@@ -143,8 +143,8 @@
 
       <div class="col-lg-6 d-flex coo-2">
         <div class="cou-right">
-		  @if($home_course->expiring_soon==1)
-          <div class="blink-me ending-soon">Ending Soon</div>
+		  @if(!empty($home_course->expiring_soon_text))
+          <div class="blink-me ending-soon">{{$home_course->expiring_soon_text}}</div>
 		  @endif
 
           <h2>{{ $home_course->title }}</h2>

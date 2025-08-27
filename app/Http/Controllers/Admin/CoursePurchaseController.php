@@ -54,5 +54,15 @@ class CoursePurchaseController extends Controller
 
     }
 
+
+       public function destroy(string $id)
+    {
+
+        CourseBooking::where('id',$id)->delete();
+
+        return redirect()->back()->with('success',' Deleted Successfully ');
+
+    }
+
     
 }

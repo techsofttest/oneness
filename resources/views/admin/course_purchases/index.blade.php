@@ -49,7 +49,7 @@
     </div>
         @endif
 
-        <div class="row">
+        <div class="row my-3 justify-content-center">
 
         <div class="col-3">
 
@@ -86,6 +86,7 @@
                 <th>Message</th>
                 <th>Purchased At</th>
                 <th>Validity</th>
+                <th>Actions</th>
             </tr>
 
           </thead>
@@ -95,7 +96,8 @@
 
 
        <tbody>
-  @foreach($purchases as $purchase)
+                @if($purchases->count())
+                @foreach($purchases as $purchase)
                 <tr>
                     <td>{{ $purchase->id }}</td>
                     <td>{{ $purchase->user->name ?? 'N/A' }} <br> {{ $purchase->user->email ?? 'N/A' }}<br>{{ $purchase->phone }}</td>
@@ -124,8 +126,27 @@
 
                     <td>{{ !empty($purchase->activation_date) ? date('d-m-y',strtotime($purchase->activation_date))  : '' }} <br>-<br> {{ !empty($purchase->ending_date) ? date('d-m-y',strtotime($purchase->ending_date))  : '' }}</td>
                    
+                    <td>
+                <form action="{{ route('admin.purchases.destroy', $purchase->id) }}" method="POST" class="d-inline-block">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger"
+                        onclick="return confirm('Are you sure you want to delete this booking?');">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+                </form>
+                   </td>
+
                 </tr>
             @endforeach
+
+            @else
+
+            <tr>
+                <td colspan="9" align="center">No Purchases Yet</td>
+            </tr>
+
+            @endif
 </tbody>
 
 

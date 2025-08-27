@@ -108,12 +108,15 @@
         </td>
 
 
-         <td>
-        @if ($course->expiring_soon == 0)
-          <a href="{{url('admin/course/expire-status/'.$course->id.'')}}" onclick="return confirm('Enable expiring soon badge?')" class="btn btn-warning">Hidden</a>
-        @elseif ($course->expiring_soon == 1)
-          <a href="{{url('admin/course/expire-status/'.$course->id.'')}}" onclick="return confirm('Disable expiring soon badge?')" class="btn btn-danger">Shown</a>
-        @endif
+        <td>
+
+         <button type="button" 
+            class="btn {{ $course->expiring_soon ? 'btn-danger' : 'btn-warning' }}" 
+            data-toggle="modal" 
+            data-target="#expireModal{{ $course->id }}">
+        {{ $course->expiring_soon_text ? $course->expiring_soon_text : '-' }}
+        </button>
+
       </td>
 
 
@@ -137,6 +140,44 @@
 
         </td>
     </tr>
+
+
+    <!-- Expire Status Modal -->
+<div class="modal fade" id="expireModal{{ $course->id }}" tabindex="-1" role="dialog" aria-labelledby="expireModalLabel{{ $course->id }}" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      
+      <form action="{{ url('admin/course/expire-status/'.$course->id) }}" method="POST">
+        @csrf
+        
+        <div class="modal-header">
+          <h5 class="modal-title" id="expireModalLabel{{ $course->id }}">
+            Update Expiring Soon Status
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="reason">Expiring Soon Text</label>
+            <input type="text" name="expiring_soon_text" class="form-control" placeholder="Enter reason..." required>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
 @endforeach
 </tbody>
 

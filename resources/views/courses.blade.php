@@ -66,8 +66,8 @@
 	 <div class="cou-right">
 	 	   
 
-                        @if($val->expiring_soon==1)
-          				<div class="blink-me ending-soon">Ending Soon</div>
+                        @if(!empty($val->expiring_soon_text))
+          				<div class="blink-me ending-soon">{{$val->expiring_soon_text}}</div>
 		  				@endif
 
 					
