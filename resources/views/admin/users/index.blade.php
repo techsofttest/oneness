@@ -66,6 +66,16 @@
       <a onclick="return confirm('Reset user device?')" class="btn btn-warning" href="{{url('admin/users/reset-device/'.$user->id.'')}}">
           <i class="fas fa-clock"></i> Reset Device
       </a>
+
+
+      <form action="{{ route('users.destroy', $user->id) }}" method="POST" class="d-inline-block" onsubmit="return confirm('Are you sure you want to delete this user?');">
+          @csrf
+          @method('DELETE')
+          <button type="submit" class="btn btn-danger">
+            <i class="fas fa-trash-alt"></i> Delete
+          </button>
+        </form>
+
       </td>
       
       
