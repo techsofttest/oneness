@@ -189,10 +189,18 @@
                 </div>  
 
 
-                <div class="form-group row">
-    <label for="duration" class="col-sm-2 col-form-label">Duration (days)</label>
+<div class="form-group row">
+    <label for="duration" class="col-sm-2 col-form-label">Duration (In days)</label>
     <div class="col-sm-10">
         <input type="number" name="duration" class="form-control" id="duration">
+    </div>
+</div>
+
+
+<div class="form-group row">
+    <label for="duration_text" class="col-sm-2 col-form-label">Duration Text</label>
+    <div class="col-sm-10">
+        <input type="text" name="duration_text" class="form-control" id="duration_text" required>
     </div>
 </div>
 
@@ -201,7 +209,7 @@
  <div class="form-group row">
     <label for="fees" class="col-sm-2 col-form-label">Fees</label>
     <div class="col-sm-10">
-        <input type="text" name="fees" class="form-control" id="fees">
+        <input type="number" name="fees" class="form-control" id="fees" required>
     </div>
 </div>
 

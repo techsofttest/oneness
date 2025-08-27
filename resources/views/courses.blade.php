@@ -74,14 +74,14 @@
                         <h2  >	{{$val->title}}</h2>
                        
 						
-						<h3>{{$val->duration}} Days Validity</h3>
+						<h3>{{$val->duration_text}}</h3>
 						
 					{!!$val->description!!}
 	 
 	 			<div class="tour-listing__card-inner-content">
 							<div class="ttpricesec">
 							
-							<p>7 Days course Fees</p>
+							<p>Course Fee</p>
 						
     						<h4 class="tour-listing__card-price"> {{ !empty($val->fees) ? $val->fees : 'Free' }}</h4>
 

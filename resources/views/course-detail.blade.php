@@ -61,8 +61,8 @@
  
  <img src="{{ asset('uploads/course/') }}/{{ $course_detail->image }}" alt=""  class="book-class-img">
 <hr>
-<h4>Days</h4>
-<h5>7 Days online class</h5>
+<h4>Duration</h4>
+<h5>{{ $course_detail->duration_text }}</h5>
  
  
  
@@ -70,7 +70,7 @@
 
 
 <div class="booki-box3">
-<h3>Your  Fees price  </h3>
+<h3>Your Fees price</h3>
 <div class="price-bbg ">
 
 <div class="pps-1">Price</div>
@@ -96,45 +96,37 @@
 
 <div class="Booking-right-ss">
 
+@if(!empty($course_detail->fees))
 <h3>Scan This QR Code to make payment</h3>
+
 <div class="qr-code">
-<img src="{{asset('assets/img/QR.png')}}" alt="">
+
+<img src="{{asset('assets/img/QR.jpg')}}" alt="QR Code">
 
 </div>
+
+@endif
+
 <h3>Enter your details</h3>
  <form method="post" id="submit-button" enctype="multipart/form-data">
-    @csrf
+  @csrf
 <div class="row   Guest pay-form">
 
-
-
-        @php /*
-
-          <div class="col-lg-6 col-md-12 form-group col-sm-6">
-		  
-       
-		    <label>Name</label>
-            <input type="text" class="form-control" placeholder="" name="name" required="">
-          </div>
-
-          <div class="col-lg-6 col-md-12 form-group col-sm-6">
-		   <label>Email Address</label>
-            <input type="email" class="form-control" placeholder=" " name="email" required="">
-          </div>
-        */
-        @endphp
-		  
-        <div class="col-lg-6 col-md-12 form-group col-sm-6">
+        <div class="col-lg-12 col-md-12 form-group col-sm-12">
 		    <label>Phone No</label>
             <input type="number" class="form-control" placeholder=" " name="phone" required="">
         </div>
-		    <div class="col-lg-6 col-md-12 form-group col-sm-6">
+
+
+        @if(!empty($course_detail->fees))
+		    <div class="col-lg-12 col-md-12 form-group col-sm-12">
 		   <label>Payment Slip</label>
             <input type="file" class="form-control" placeholder=" " name="slip" required="">
         </div>
+        @endif
   
          
-<div class="col-lg-12 col-md-12 col-sm-12 form-group ">
+      <div class="col-lg-12 col-md-12 col-sm-12 form-group ">
       <textarea name="message" id="message" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>
 		 	</div>
 		        <div class="col-lg-12  ">
@@ -165,6 +157,10 @@
           <div class="col-lg-12 col-md-12 form-group col-sm-12">
 		      <label>Password</label>
             <input type="password" class="form-control" placeholder=" " name="password" required="">
+          </div>
+
+          <div class="col-lg-12 col-md-12 form-group col-sm-12">
+          <a href="{{url('password/reset')}}" class="ms-2">Forgot password?</a>
           </div>
 
 		      <div class="col-lg-12  ">

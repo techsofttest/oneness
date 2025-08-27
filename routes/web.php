@@ -3,6 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ResetPasswordController;
+
 
 use App\Http\Controllers\Admin\BannerController;
  use App\Http\Controllers\Admin\PageController;
@@ -139,6 +142,13 @@ Route::get('/course-video/{courseId}/{videoFile}', [VideoController::class, 'str
 Route::get('/logout', [LoginController::class, 'logout'])->name('logouts');
 
 
+Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+
+Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+
 
 use Illuminate\Support\Facades\Artisan;
 
@@ -150,6 +160,8 @@ Route::get('/optimize-app', function () {
 
     return 'Application optimized for production!';
 });
+
+
 
 
 Route::get('/run-migrations', function () {

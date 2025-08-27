@@ -148,7 +148,7 @@
 		  @endif
 
           <h2>{{ $home_course->title }}</h2>
-          <h3>{{ $home_course->duration }} Days</h3>
+          <h3>{{ $home_course->duration_text }}</h3>
           {!! $home_course->description !!}
           <div class="tour-listing__card-inner-content">
             <div class="ttpricesec">
@@ -503,19 +503,18 @@
                 <div class="counter-card-wrap">
                     <div class="counter-card style2"  data-aos="zoom-in" data-aos-duration="800">
 					<div class="co-icon"><img src="{{asset('assets/img/c1.png')}}" alt=""></div>
-                        <h2 class="counter-card_number"><span class="counter-number">2000</span>+</h2>
+                        <h2 class="counter-card_number"><span class="counter-number">10,000</span>+</h2>
                         <span class="counter-card_text">Happy Customers</span>
                     </div>
                     <div class="counter-card style2"  data-aos="zoom-in" data-aos-duration="800">
 					<div class="co-icon"><img src="{{asset('assets/img/c2.png')}}" alt=""></div>
-                        <h2 class="counter-card_number"><span class="counter-number">90,00</span>+</h2>
+                        <h2 class="counter-card_number"><span class="counter-number">10,000</span>+</h2>
                         <span class="counter-card_text">Happy Families</span>
                     </div>
                    
                     <div class="counter-card style2"  data-aos="zoom-in" data-aos-duration="800">
 					<div class="co-icon"><img src="{{asset('assets/img/c3.png')}}" alt=""></div>
-                        <h2 class="counter-card_number"><span class="counter-number">	
-200</span>+</h2>
+                        <h2 class="counter-card_number"><span class="counter-number">10,000</span>+</h2>
                         <span class="counter-card_text">Students</span>
                     </div>
 					 <div class="counter-card style2"  data-aos="zoom-in" data-aos-duration="800">

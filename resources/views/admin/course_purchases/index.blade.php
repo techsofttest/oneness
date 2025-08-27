@@ -40,6 +40,39 @@
 
       <div class="card-body">
 
+        @if (session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+        @endif
+
+        <div class="row">
+
+        <div class="col-3">
+
+          <select class="form-control">
+
+          <option value="">Select</option>
+
+          </select>
+
+        </div>
+
+        <div class="col-3">
+
+          <select class="form-control">
+
+          <option value="">Select</option>
+
+          </select>
+
+        </div>
+
+        </div>
+
         <table id="datatable" class="table table-bordered table-striped">
 
           <thead>
@@ -89,7 +122,7 @@
                     <td>{{ $purchase->message }}</td>
                     <td>{{ $purchase->created_at->format('d M Y') }}</td>
 
-                    <td>{{ empty($purchase->activation_date) ? $purchase->activation_date  : '' }} - {{ empty($purchase->ending_date) ? $purchase->ending_date  : '' }}</td>
+                    <td>{{ !empty($purchase->activation_date) ? date('d-m-y',strtotime($purchase->activation_date))  : '' }} <br>-<br> {{ !empty($purchase->ending_date) ? date('d-m-y',strtotime($purchase->ending_date))  : '' }}</td>
                    
                 </tr>
             @endforeach

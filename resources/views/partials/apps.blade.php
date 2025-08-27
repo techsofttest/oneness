@@ -84,27 +84,27 @@
 						
 						<ul class="social-profile list-style style1">
                                         <li>
-                                        <a href="#" target="_blank">
+                                        <a href="{{$contact->facebook}}" target="_blank">
                                             <img src="{{asset('assets/img/s1.png')}}" alt="">
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" target="_blank">
+                                        <a href="{{$contact->twitter}}" target="_blank">
                                            <img src="{{asset('assets/img/s2.png')}}" alt="">
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" target="_blank">
+                                        <a href="{{$contact->instagram}}" target="_blank">
                                             <img src="{{asset('assets/img/s3.png')}}" alt="">
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" target="_blank">
+                                        <a href="{{$contact->linkedin}}" target="_blank">
                                              <img src="{{asset('assets/img/s4.png')}}" alt="">
                                         </a>
                                     </li>
 									 <li>
-                                        <a href="https://www.youtube.com/@healingpower" target="_blank">
+                                        <a href="{{$contact->youtube}}" target="_blank">
                                              <img src="{{asset('assets/img/s5.png')}}" alt="">
                                         </a>
                                     </li>
@@ -257,11 +257,11 @@
           <div class="col-auto">
             <div class="Social-img">
 			
-			<a href="#" target="_blank"><img src="{{asset('assets/img/s1.png')}}" alt=""></a>
-			<a href="#" target="_blank"><img src="{{asset('assets/img/s2.png')}}" alt=""></a>
-			<a href="#" target="_blank"><img src="{{asset('assets/img/s3.png')}}" alt=""></a>
-			<a href="#" target="_blank"><img src="{{asset('assets/img/s4.png')}}" alt=""></a>
-			<a href="https://www.youtube.com/@healingpower" target="_blank"><img src="{{asset('assets/img/s5.png')}}" alt=""></a>
+			<a href="{{$contact->facebook}}" target="_blank"><img src="{{asset('assets/img/s1.png')}}" alt=""></a>
+			<a href="{{$contact->twitter}}" target="_blank"><img src="{{asset('assets/img/s2.png')}}" alt=""></a>
+			<a href="{{$contact->instagram}}" target="_blank"><img src="{{asset('assets/img/s3.png')}}" alt=""></a>
+			<a href="{{$contact->linkedin}}" target="_blank"><img src="{{asset('assets/img/s4.png')}}" alt=""></a>
+			<a href="{{$contact->youtube}}" target="_blank"><img src="{{asset('assets/img/s5.png')}}" alt=""></a>
 			</div>
           </div>
         </div>
@@ -337,9 +337,9 @@
                                 <h3 class="widget_title">Working Hours</h3>
                                 <div class="th-widget-contact">
                                     <div class="info-box">
-                                      
-                                        <p class="info-box_text">Mon - Sat:9:00 Am - 8:00 Pm</p>
-										 <p class="info-box_text">Sun:Closed </p>
+                                        
+                                        <p class="info-box_text">10:30 am to 1:00 pm <br> 04:30 pm to 06:30 pm<br>Sun : Closed</p>
+										 
                                     </div>
                                    
                                        
@@ -379,7 +379,7 @@
             <input name="password" type="password" placeholder="Password" required>
 			
          
-            <!--<button data-bs-toggle="modal" data-bs-target="#forgotModal" data-bs-dismiss="modal" aria-label="Close" class="btn mt-10" >Forgot password?</button>-->
+            <a aria-label="Close" class="btn mt-10" href="{{url('/password/reset')}}" >Forgot password?</a>
 
             <button class="th-btn mt-10" name="submit">Login</button>
            

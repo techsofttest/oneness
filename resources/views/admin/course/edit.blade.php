@@ -183,11 +183,16 @@
                 
 
                     <div class="col-sm-10">
-
                         <input type="number" class="form-control" name="duration" value="{{$course->duration}}" >
-
+                    </div>
                     </div>
 
+
+                    <div class="form-group row">
+                    <label for="duration_text" class="col-sm-2 col-form-label">Duration Text</label>
+                    <div class="col-sm-10">
+                    <input type="text" name="duration_text" class="form-control" id="duration_text" value="{{$course->duration_text}}" required>
+                    </div>
                     </div>
 
 
@@ -205,7 +210,7 @@
 
                     <div class="col-sm-10">
 
-                        <input type="text" class="form-control" name="fees" value="{{$course->fees}}" >
+                        <input type="number" class="form-control" name="fees" value="{{$course->fees}}" required>
 
                     </div>
 
