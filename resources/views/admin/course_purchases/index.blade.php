@@ -49,6 +49,8 @@
     </div>
         @endif
 
+        @php /*
+
         <div class="row my-3 justify-content-center">
 
         <div class="col-3">
@@ -63,7 +65,7 @@
 
         <div class="col-3">
 
-          <select class="form-control">
+          <select name="" class="form-control">
 
           <option value="">Select</option>
 
@@ -72,6 +74,8 @@
         </div>
 
         </div>
+
+        */ @endphp
 
         <table id="datatable" class="table table-bordered table-striped">
 
