@@ -129,7 +129,7 @@ class LoginController extends Controller
 
             return redirect()->back()
                 ->withInput()
-                ->with('error', 'Please correct the errors and try again.');
+                ->with('error', $validator->errors()->first());
         }
 
         $validated = $validator->validated();

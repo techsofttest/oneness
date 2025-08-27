@@ -1,41 +1,41 @@
-@extends('partials.apps')
-
-
-
-@section('meta_title')
-
-    <title>{{ $page_seo['meta_title'] }}</title>
-
-@endsection
-
-
-
-@section('meta_desc')
-
-    <meta name="description" content="{{ $page_seo['meta_desc'] }}">
-
-@endsection
-
-
-
-@section('meta_key')
-
-    <meta name="keywords" content="{{ $page_seo['meta_key'] }}">
-
-@endsection
 
 
 
 
+<?php $__env->startSection('meta_title'); ?>
+
+    <title><?php echo e($page_seo['meta_title']); ?></title>
+
+<?php $__env->stopSection(); ?>
 
 
 
-@section('content')
+<?php $__env->startSection('meta_desc'); ?>
+
+    <meta name="description" content="<?php echo e($page_seo['meta_desc']); ?>">
+
+<?php $__env->stopSection(); ?>
+
+
+
+<?php $__env->startSection('meta_key'); ?>
+
+    <meta name="keywords" content="<?php echo e($page_seo['meta_key']); ?>">
+
+<?php $__env->stopSection(); ?>
+
+
+
+
+
+
+
+<?php $__env->startSection('content'); ?>
 
   <div class="inner-bannr-sec">
   
   
-  <img src="{{asset('assets/img/banner/course-d-banner.jpg')}}" alt="" width="100%">
+  <img src="<?php echo e(asset('assets/img/banner/course-d-banner.jpg')); ?>" alt="" width="100%">
   </div>
      
  <div class="Coursemsec-book">
@@ -57,9 +57,9 @@
 <h3>Your booking details</h3>
 
 <h4>Course </h4>
-<h5>{{$course_detail->title}}</h5>
+<h5><?php echo e($course_detail->title); ?></h5>
  
- <img src="{{ asset('uploads/course/') }}/{{ $course_detail->image }}" alt=""  class="book-class-img">
+ <img src="<?php echo e(asset('uploads/course/')); ?>/<?php echo e($course_detail->image); ?>" alt=""  class="book-class-img">
 <hr>
 <h4>Days</h4>
 <h5>7 Days online class</h5>
@@ -75,8 +75,9 @@
 
 <div class="pps-1">Price</div>
 <div class="pps-2">
-    {{ !empty($course_detail->fees) ? $course_detail->fees : 'Free' }}
-    <span>{{$course_detail->fees}}</span>
+    <?php echo e(!empty($course_detail->fees) ? $course_detail->fees : 'Free'); ?>
+
+    <span><?php echo e($course_detail->fees); ?></span>
 </div>
 
  </div>
@@ -92,23 +93,23 @@
 
 
 
-@if(auth()->check())
+<?php if(auth()->check()): ?>
 
 <div class="Booking-right-ss">
 
 <h3>Scan This QR Code to make payment</h3>
 <div class="qr-code">
-<img src="{{asset('assets/img/QR.png')}}" alt="">
+<img src="<?php echo e(asset('assets/img/QR.png')); ?>" alt="">
 
 </div>
 <h3>Enter your details</h3>
  <form method="post" id="submit-button" enctype="multipart/form-data">
-    @csrf
+    <?php echo csrf_field(); ?>
 <div class="row   Guest pay-form">
 
 
 
-        @php /*
+        <?php /*
 
           <div class="col-lg-6 col-md-12 form-group col-sm-6">
 		  
@@ -122,7 +123,7 @@
             <input type="email" class="form-control" placeholder=" " name="email" required="">
           </div>
         */
-        @endphp
+        ?>
 		  
         <div class="col-lg-6 col-md-12 form-group col-sm-6">
 		    <label>Phone No</label>
@@ -146,15 +147,15 @@
 </div>
 
 
-@else
+<?php else: ?>
 
 
 <h3>Login or signup</h3>
 
 <div id="login-sec">
 
-    <form id="loginForm2" action="{{route('UserAuth')}}" method="POST">
-    @csrf
+    <form id="loginForm2" action="<?php echo e(route('UserAuth')); ?>" method="POST">
+    <?php echo csrf_field(); ?>
 <div class="row   Guest pay-form">
 
           <div class="col-lg-12 col-md-12 form-group col-sm-12">
@@ -181,8 +182,8 @@
 
 <div id="signup-sec"style="display:none;">
 
-<form id="registerForm" action="{{route('UserRegister')}}" method="POST">
-    @csrf
+<form id="registerForm" action="<?php echo e(route('UserRegister')); ?>" method="POST">
+    <?php echo csrf_field(); ?>
 <div class="row   Guest pay-form">
 
 
@@ -215,7 +216,7 @@
 </div>
 
 
-@endif
+<?php endif; ?>
 
 
 
@@ -258,4 +259,5 @@
    </script>
 
 
-  @endsection
+  <?php $__env->stopSection(); ?>
+<?php echo $__env->make('partials.apps', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH E:\xampp\htdocs\oneness_homeo\resources\views/course-detail.blade.php ENDPATH**/ ?>
