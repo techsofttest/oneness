@@ -131,13 +131,26 @@
     </div>
   </div>
 
+  <style>
+
+	.coo-1, .coo-2 {
+  	flex: 1;              
+  	padding: 1rem;
+	}
+
+  </style>
+
   @foreach($courses_all as $home_course)
 
   <div class="container-fluid ">
-    <div class="row">
+    <div class="row align-items-stretch">
       <div class="col-lg-6 d-flex coo-1">
         <div class="cou-left">
+		@if(!empty($home_course->image))
           <img class="lazyload" data-src="{{ asset('uploads/course/') }}/{{ $home_course->image }}" alt="" width="100%">
+		@else
+		  <img class="lazyload" data-src="{{ asset('assets/img/sabu-joseph.jpg') }}" alt="" width="100%">
+		@endif
         </div>
       </div>
 
