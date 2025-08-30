@@ -256,8 +256,12 @@
         <div class="form-group row mb-3">
             <label class="col-sm-2 col-form-label">Video</label>
 
-            <div class="col-sm-6">
+            <div class="col-sm-3">
             <p>{{ $more->c_title}}</p>
+            </div>
+
+             <div class="col-sm-3">
+            <p>{{ $more->video}}</p>
             </div>
 
             <div class="col-sm-4">

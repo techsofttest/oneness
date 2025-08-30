@@ -106,10 +106,12 @@
          
         </tr>
 
+        @php $v=1; @endphp
+
         @foreach($course->videos as $video)
 
           <tr class="cart_item">
-            <td>{{$i}}</td>
+            <td>{{$v}}</td>
             <td><div class="pp-pdf">{{ $video->c_title ?? 'Untitled' }}</div></td>
 			 
 			  <td>
@@ -131,8 +133,10 @@
             
           </tr>
 
-          @php $i++ @endphp
+          
+          @php $v++ @endphp
           @endforeach
+          @php $i++ @endphp
           @endforeach
 
           @else
