@@ -76,7 +76,6 @@
 <div class="pps-1">Price</div>
 <div class="pps-2">
     {{ !empty($course_detail->fees) ? $course_detail->fees : 'Free' }}
-    <span>{{$course_detail->fees}}</span>
 </div>
 
  </div>

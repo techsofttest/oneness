@@ -25,7 +25,7 @@ class CoursefrontController extends Controller
 
         $data['home_content'] = Page::find(8);
 
-              $data['courses'] =   Coursesnew::get();
+        $data['courses'] =   Coursesnew::orderBy('id','desc')->get();
 
          return view('courses',$data);
 
