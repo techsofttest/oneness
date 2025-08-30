@@ -60,7 +60,7 @@
 	 <div class="cou-left">
 	 
 	 @if(!empty($val->image))
-          <img class="lazyload" src="{{ asset('uploads/course/') }}/{{ $home_course->image }}" alt="" width="100%">
+          <img class="lazyload" src="{{ asset('uploads/course/') }}/{{ $val->image }}" alt="" width="100%">
 		@else
 		  <img class="lazyload" src="{{ asset('assets/img/sabu-joseph.jpg') }}" alt="" width="100%">
 	@endif
