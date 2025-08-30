@@ -1409,7 +1409,7 @@ width: 40px;}
 
     .coo-1, .coo-2
     {
-        flex:none;
+        flex:none !important;
     }
 
 }
