@@ -261,7 +261,7 @@
             </div>
 
              <div class="col-sm-3">
-            <p>{{ $more->video}}</p>
+            <p>ID : {{ $more->video}}</p>
             </div>
 
             <div class="col-sm-4">
