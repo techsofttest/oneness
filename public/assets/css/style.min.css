@@ -2545,12 +2545,12 @@ padding: 22px 0;
 .th-hero-wrapper .slick-arrow {
     border: none;
     border-radius: 0%;
-    background-color:transparent);
+    background-color:transparent;
     --pos-x: 5%;
     color: var(--white-color);
 }
 .th-hero-wrapper .slick-arrow:hover {
-    background-color: transparent);
+    background-color: transparent;
    color: var(--white-color);
 }
 @keyframes widthAni {
@@ -5107,3 +5107,14 @@ width:200px
 	  }
 	  
 	}
+
+    
+.th-menu-wrapper.th-body-visible {
+    opacity: 1;
+    visibility: visible;
+}
+.th-menu-wrapper.th-body-visible .th-menu-area {
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+}

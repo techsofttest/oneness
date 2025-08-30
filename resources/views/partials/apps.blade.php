@@ -31,7 +31,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="{{asset('assets/css/app.min.css')}}" />
         <link rel="stylesheet" href="{{asset('assets/css/fa.min.css')}}" />
-        <link rel="stylesheet" href="{{asset('assets/css/style.min.css')}}?v1.3" />
+        <link rel="stylesheet" href="{{asset('assets/css/style.min.css')}}?v1.4" />
 		    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}?v1" />
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -48,10 +48,13 @@
                 <div class="mobile-logo">
                     <a href="{{url('/')}}" > <h3>Healer Sabu Joseph</h3></a>
                 </div>
+
+                @if(!auth()->check() && auth()->user()->role!="user")
 				<div class="mobile-login">
 				<a href="#" data-bs-toggle="modal" data-bs-target="#SigninModal">Login</a>
 				
 		   </div>
+                @endif
                 <div class="th-mobile-menu">
                     <ul>
                       <li><a href="{{url('/')}}">Home</a></li>
@@ -615,6 +618,7 @@ Swal.fire({
 
 
 <script>
+    
   function getDeviceToken() {
     let token = localStorage.getItem('device_fingerprint');
     if (!token) {
@@ -625,6 +629,7 @@ Swal.fire({
   }
 
   // On form submit, add device_token to a hidden input
+  
   document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.querySelector('#loginForm');
     const input = document.createElement('input');
@@ -655,6 +660,7 @@ Swal.fire({
     input.value = getDeviceToken();
     loginForm.appendChild(input);
   });
+  
 
 </script> 
 
