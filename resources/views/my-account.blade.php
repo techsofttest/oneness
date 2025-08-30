@@ -66,6 +66,10 @@
               
               <h5>Hello {{ auth()->user()->name ?? 'User Name' }}</h5>
 
+              <h6>{{ !empty(auth()->user()->email) ? auth()->user()->email : '' }}</h6>
+
+              <h6>{{ !empty($latest_booking->phone) ? $latest_booking->phone : '' }}</h6>
+
                 <table class="table table-bordered">
 
                   <tr>

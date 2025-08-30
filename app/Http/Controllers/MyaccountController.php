@@ -25,6 +25,10 @@ class MyaccountController extends Controller
         ->select('coursesnews.*','course_bookings.activation_date','course_bookings.ending_date','course_bookings.status','course_bookings.created_at as purchased_at')
         ->get(); 
 
+        $data['latest_booking'] = CourseBooking::where('user_id', auth()->id())
+            ->orderBy('id','desc')
+            ->first();
+
         return view('my-account', $data);
     }
 }

@@ -113,7 +113,7 @@
 
         <div class="col-lg-12 col-md-12 form-group col-sm-12">
 		    <label>Phone No</label>
-            <input type="number" class="form-control" placeholder=" " name="phone" required="">
+            <input type="number" class="form-control" placeholder=" " value="{{ !empty($latest_booking->phone) ? $latest_booking->phone : '' }}" name="phone" required="">
         </div>
 
 

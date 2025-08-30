@@ -40,10 +40,6 @@ class CoursefrontController extends Controller
 
     $data['course_detail'] = Coursesnew::where('slug', $slug)->first();
 
-    
-
-
-
     if (auth()->check()) {
         $userId = auth()->id();
         $courseId = $data['course_detail']->id;
@@ -55,6 +51,11 @@ class CoursefrontController extends Controller
         if ($alreadyBooked) {
             return redirect()->route('course-videos');
         }
+
+        $data['latest_booking'] = CourseBooking::where('user_id', $userId)
+            ->orderBy('id','desc')
+            ->first();
+
     }
 
       if ($request->isMethod('post')) {

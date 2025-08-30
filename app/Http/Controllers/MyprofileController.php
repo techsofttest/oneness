@@ -24,6 +24,7 @@ class MyprofileController extends Controller
 
     $course_booking = CourseBooking::where('id', $userId)->with('course')->first();
 
+    
     // print_r($course_booking->name);
     //  print_r($course_booking->email);
     //   print_r($course_booking->phone);
@@ -34,7 +35,6 @@ class MyprofileController extends Controller
         return redirect()->route('login')->with('error', 'User not found.');
     }
 
-    // ✅ Pass the variable correctly
     $data['course_booking'] = $course_booking;
 
     return view('myprofile', $data);
