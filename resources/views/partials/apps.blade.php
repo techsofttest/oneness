@@ -49,7 +49,7 @@
                     <a href="{{url('/')}}" > <h3>Healer Sabu Joseph</h3></a>
                 </div>
 
-                @if(!auth()->check() && auth()->user()->role!="user")
+                @if(!auth()->check())
 				<div class="mobile-login">
 				<a href="#" data-bs-toggle="modal" data-bs-target="#SigninModal">Login</a>
 				
@@ -156,7 +156,7 @@
                 <ul>
                  
 
-                @if(auth()->check() && auth()->user()->role=="user")
+                @if(auth()->check())
 				  <li class="menu-item-has-children login-img"><a href="javascript:void()" class="phh-bb"><img src="{{asset('assets/img/user.jpg')}}" alt=""></a>
                     <ul class="sub-menu">
 					
