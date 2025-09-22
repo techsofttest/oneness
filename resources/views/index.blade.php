@@ -392,8 +392,20 @@
                             <h2 class="sec-title">Our Clinic Testimonials</h2>
 						 
                         </div>
+
+			@php /*			
 		 	<div class="tagembed-widget" style="width:100%;height:100%;overflow:auto;" data-widget-id="293017" website="1"></div><script src="https://widget.tagembed.com/embed.min.js" type="text/javascript"></script>
-			
+			*/ @endphp
+
+			<style>
+				.es-main-container a:last-of-type {
+				display: none !important;
+				}
+			</style>
+
+			<!-- Elfsight Google Reviews | Untitled Google Reviews -->
+			<script src="https://elfsightcdn.com/platform.js" async></script>
+			<div class="elfsight-app-33e0611f-7bef-474a-a72a-7c9af01d93d8" data-elfsight-app-lazy></div>
 		 	
  </div>
 	 </div>
