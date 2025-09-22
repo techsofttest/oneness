@@ -397,11 +397,7 @@
 		 	<div class="tagembed-widget" style="width:100%;height:100%;overflow:auto;" data-widget-id="293017" website="1"></div><script src="https://widget.tagembed.com/embed.min.js" type="text/javascript"></script>
 			*/ @endphp
 
-			<style>
-				.es-main-container a:last-of-type {
-				display: none !important;
-				}
-			</style>
+			
 
 			<!-- Elfsight Google Reviews | Untitled Google Reviews -->
 			<script src="https://elfsightcdn.com/platform.js" async></script>
