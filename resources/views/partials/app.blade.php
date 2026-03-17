@@ -72,7 +72,7 @@
                         <div class="col-auto">
                             <div class="header-links">
                                 <ul>
-                                    <li><i class="fal fa-location-dot"></i>Mookkannoor, Kerala </li>    
+                                    {{--<li><i class="fal fa-location-dot"></i>Mookkannoor, Kerala </li> --}}
                                     <li><i class="fal fa-phone"></i><a href="tel:+91 9747532827">+91 9747532827</a></li>
 									<li><i class="fab fa-whatsapp"></i><a ref="https://api.whatsapp.com/send/?phone=+91 9747532827&text=%2AHey  Oneness Homoeo & Acupuncture Clinic+&app_absent=0" target="_blank">+91 9747532827</a></li>
                                 </ul>
@@ -286,6 +286,9 @@
                             </div>
                         </div>
 
+
+
+                        {{--
                         <div class="col-md-4 col-sm-12   col-lg-2">
                             <div class="widget footer-widget">
                                 <h3 class="widget_title">Locate   Us</h3>
@@ -299,6 +302,9 @@
                                 </div>
                             </div>
                         </div>
+                        --}}
+
+
                              <div class="col-md-4 col-sm-12   col-lg-3">
                             <div class="widget footer-widget">
                                 <h3 class="widget_title">Working Hours</h3>
@@ -608,6 +614,7 @@ document.getElementById("defaultOpen").click();
     input.value = getDeviceToken();
     loginForm.appendChild(input);
   });
+  
 </script> 
 
 
