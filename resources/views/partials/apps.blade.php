@@ -76,7 +76,7 @@
                         <div class="col-auto">
                             <div class="header-links">
                                 <ul>
-                                    <li><i class="fal fa-location-dot"></i>Mookkannoor, Kerala </li>    
+                                    {{--<li><i class="fal fa-location-dot"></i>Mookkannoor, Kerala </li>    --}}
                                     <li><i class="fal fa-phone"></i><a href="tel:{{$contact->phone}}">{{$contact->phone}}</a></li>
 									<li><i class="fab fa-whatsapp"></i><a href="https://api.whatsapp.com/send/?phone={{$contact->whatsapp}}&text=%2AHey  Oneness Homoeo & Acupuncture Clinic+&app_absent=0" target="_blank">{{$contact->whatsapp}}</a></li>
                                 </ul>
@@ -322,7 +322,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6 col-sm-6   col-lg-2">
+                       {{-- <div class="col-md-6 col-sm-6   col-lg-2">
                             <div class="widget footer-widget">
                                 <h3 class="widget_title">Locate Us</h3>
                                 <div class="th-widget-contact">
@@ -335,6 +335,9 @@
                                 </div>
                             </div>
                         </div>
+
+                        --}}
+
                              <div class="col-md-6 col-sm-6   col-lg-3">
                             <div class="widget footer-widget">
                                 <h3 class="widget_title">Working Hours</h3>
